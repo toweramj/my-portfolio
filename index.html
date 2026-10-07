@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Linking our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">MyPortfolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="theme-toggle" class="toggle-btn">🌙</button></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- 1. Hero Section -->
+    <section id="hero" class="section">
+        <h1>Hi, I'm <span class="highlight">Towera Mjimapemba</span></h1>
+        <p>A passionate ICT Professional with vast experience in Network and Server Administration</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- 2. About Me Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I am a junior developer learning the ropes of frontend technologies. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
+    </section>
+
+    <!-- 3. Projects Section -->
+    <section id="projects" class="section">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>A brief description of your awesome project and the tech stack used.</p>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>A brief description of your awesome project and the tech stack used.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+        </ul>
+    </section>
+
+    <!-- 5. Contact Section -->
+    <section id="contact" class="section">
+        <h2>Get In Touch</h2>
+        <p>Have a project in mind or just want to say hi? Drop me a message!</p>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- 1. Your verified Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="836bac2a-91f5-4d31-bd6f-b9eb798122ca">
+
+    <!-- 2. Your styled inputs with placeholders restored -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    
+    <!-- 3. Optional: Tells Web3Forms where to redirect your user after they click submit -->
+    <!-- You can remove this line if you want to use Web3Forms' default thank-you landing page -->
+   
+    <button type="submit" class="btn">Send Message</button>
+</form>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Your Name. All rights reserved.</p>
+</footer>
+    
+
+    <!-- Linking our JavaScript file at the bottom so it loads last -->
+    <script src="script.js"></script>
+</body>
+</html>

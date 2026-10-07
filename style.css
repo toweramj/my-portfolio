@@ -1,0 +1,245 @@
+/* 1. CSS VARIABLES (Our central color control panel) */
+:root {
+    --bg-color: #0f172a;       /* Deep slate dark background */
+    --text-color: #f8fafc;     /* Crisp white text */
+    --text-muted: #94a3b8;     /* Soft gray for secondary text */
+    --accent-color: #38bdf8;   /* Bright electric blue for highlights */
+    --card-bg: #1e293b;        /* Slightly lighter dark tone for cards */
+    --nav-bg: rgba(15, 23, 42, 0.9); /* Translucent navbar background */
+}
+
+/* 2. BASE STYLES & RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling when clicking nav links */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* 3. NAVIGATION BAR */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px); /* Gives that premium blurred glass look */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* 4. LAYOUT & SECTIONS */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem 2rem; /* Generous padding so content breathes */
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+    margin-bottom: 2rem;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* 5. BUTTONS */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 0.8rem 1.6rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    width: fit-content;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+/* 6. PROJECTS SECTION (Grid Layout) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.project-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* 7. SKILLS SECTION */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.skills-list li {
+    background-color: var(--card-bg);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 8. CONTACT FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+/* 9. FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+/* 10. THEME TOGGLE BUTTON STYLING */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.2);
+}
+
+/* 11. LIGHT MODE COLOR OVERRIDES */
+/* When the <body> tag has the class "light-mode", these variables will override the original dark ones */
+body.light-mode {
+    --bg-color: #f8fafc;       /* Crisp white/light gray background */
+    --text-color: #0f172a;     /* Deep slate dark text */
+    --text-muted: #475569;     /* Darker gray for readable secondary text */
+    --card-bg: #ffffff;        /* Pure white for cards to stand out */
+    --nav-bg: rgba(248, 250, 252, 0.9); /* Translucent light navbar */
+    --accent-color: #0284c7;   /* Richer blue for better contrast on light backgrounds */
+}
+
+/* Minor tweak: make the button text color adapt nicely in light mode */
+body.light-mode .btn {
+    color: #ffffff;
+}
+/* 12. CONTACT FORM SUCCESS MESSAGE */
+.form-success {
+    background-color: rgba(56, 189, 248, 0.1); /* Subtle tint of our accent color */
+    border: 1px dashed var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.form-success h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-success p {
+    margin: 0 auto;
+}
+
