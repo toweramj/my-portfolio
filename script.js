@@ -29,10 +29,12 @@ contactForm.addEventListener('submit', (event) => {
     const formData = new FormData(contactForm);
 
     // Send the package to Web3Forms in the background
+        // Make sure the word "api" and "/submit" are included exactly like this:
     fetch('https://web3forms.com', {
         method: 'POST',
         body: formData
     })
+
     .then(response => {
         if (response.ok) {
             // Replace the form layout with our beautiful success message!
