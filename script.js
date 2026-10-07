@@ -30,7 +30,7 @@ contactForm.addEventListener('submit', (event) => {
 
     // Send the package to Web3Forms in the background
         // Make sure the word "api" and "/submit" are included exactly like this:
-    fetch('https://web3forms.com', {
+    fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData
     })
